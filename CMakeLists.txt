@@ -8,6 +8,7 @@ if (NOT MSVC)
 endif ()
 
 set(MATSLISE_PYTHON OFF)
+set(MATSLISE_LONG_DOUBLE ON)
 set(MATSLISE_QUADMATH ON)
 
 add_subdirectory(lib/matslise)
@@ -24,3 +25,6 @@ target_link_libraries(matslise_float128 Eigen3::Eigen matslise)
 
 add_executable(paine_float128 src/paine_float128.cpp)
 target_link_libraries(paine_float128 Eigen3::Eigen matslise)
+
+add_executable(test_eta src/test_eta.cpp)
+target_link_libraries(test_eta Eigen3::Eigen matslise)
